@@ -77,11 +77,10 @@ jobs:
       - checkout
       # Restore from cache
       - restore_cache:
-          keys: [frontend-build]
-
+          keys: [frontend-build]      
+      # Your job code here
       - run:
           name: test front end
-      # Your job code here
           command: |
             cd frontend
             npm install
@@ -96,10 +95,10 @@ jobs:
       - checkout
       # Restore from cache
       - restore_cache:
-          keys: [backend-build]
-      - run:
-          name: backend test
+          keys: [backend-build]      
       # Your job code here
+      - run:
+          name: test backend
           command: |
             cd backend
             npm install
