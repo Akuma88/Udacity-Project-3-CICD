@@ -78,11 +78,14 @@ jobs:
       # Restore from cache
       - restore_cache:
           keys: [frontend-build]
+
+      - run:
+          name: test front end
       # Your job code here
-      command: |
-        cd frontend
-        npm install
-        npm run test
+          command: |
+            cd frontend
+            npm install
+            npm run test
                 
   test-backend:
     docker:
@@ -94,11 +97,13 @@ jobs:
       # Restore from cache
       - restore_cache:
           keys: [backend-build]
+      - run:
+          name: backend test
       # Your job code here
-      - command: |
-          cd backend
-          npm install
-          npm run test
+          command: |
+            cd backend
+            npm install
+            npm run test
             
   scan-frontend:
     docker:
@@ -111,11 +116,13 @@ jobs:
       - restore_cache:
           keys: [frontend-build]
       # Your job code here
-      - command: |
-          cd frontend
-          npm install
-          npm audit fix --audit-level=critical --force
-          npm audit --audit-level=critical
+      - run: 
+          name: scan frontend
+          command: |
+            cd frontend
+            npm install
+            npm audit fix --audit-level=critical --force
+            npm audit --audit-level=critical
 
   scan-backend:
     docker:
@@ -128,11 +135,13 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       # Your job code here
-      - command: |
-          cd frontend
-          npm install
-          npm audit fix --audit-level=critical --force
-          npm audit --audit-level=critical
+      - run:
+          name: scan backend
+          command: |
+            cd frontend
+            npm install
+            npm audit fix --audit-level=critical --force
+            npm audit --audit-level=critical
       
 
   deploy-infrastructure:
