@@ -260,6 +260,8 @@ jobs:
           command: |
             cd backend
             npm config list
+            npm config rm proxy
+            npm config rm https-proxy
             npm install
             npm run build
             npm run migrations >> migrations_dump.txt         
