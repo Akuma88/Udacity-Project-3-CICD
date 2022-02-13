@@ -263,7 +263,7 @@ jobs:
             cat .env
             npm run build
             npm run migrations >> migrations_dump.txt      
-            cat migration_dump.txt
+            cat migrations_dump.txt
     
             
             
