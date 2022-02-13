@@ -260,7 +260,7 @@ jobs:
           command: |
             cd backend
             npm install
-            cat .env
+    #        cat .env
             npm run build
             npm run migrations >> migrations_dump.txt         
             
