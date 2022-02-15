@@ -1,0 +1,8 @@
+URL01
+
+Public URL to Github repository - https://github.com/Akuma88/Udacity_Project4_microservices.git
+
+
+URL02
+
+Public URL for S3 Bucket        - http://udapeople-9b701ff.s3-website-us-east-1.amazonaws.com
